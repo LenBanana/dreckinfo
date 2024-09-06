@@ -1,0 +1,45 @@
+<div class="card shadow-sm bg-dark text-light rounded-0 rounded-top border-bottom">
+    <div *ngIf="current && units" class="card-body">
+        <h5 class="card-title text-center mb-4">            
+            <div><app-weather-display [weather_code]="current.weather_code" [is_day]="current.is_day"></app-weather-display> {{weatherToString(current.weather_code)}}<br><small>{{ now | date: 'dd.MM.yy HH:mm' }}</small></div>
+        </h5>
+        <div class="row text-center">
+            <div class="col-6 col-md-4 mb-3">
+                <div>{{ current.temperature_2m }} {{ units.temperature_2m }}</div>
+                <small>Temperature</small>
+            </div>
+            <div class="col-6 col-md-4 mb-3">
+                <div>{{ current.apparent_temperature }} {{ units.apparent_temperature }}</div>
+                <small>Feels Like</small>
+            </div>
+            <div class="col-6 col-md-4 mb-3">
+                <div>{{ current.wind_speed_10m }} {{ units.wind_speed_10m }}</div>
+                <small>Wind Speed</small>
+            </div>
+            <div class="col-6 col-md-4 mb-3">
+                <div>{{ current.wind_gusts_10m }} {{ units.wind_gusts_10m }}</div>
+                <small>Wind Gusts</small>
+            </div>
+            <div class="col-6 col-md-4 mb-3">
+                <div>{{ current.relative_humidity_2m }} {{ units.relative_humidity_2m }}</div>
+                <small>Humidity</small>
+            </div>
+            <div class="col-6 col-md-4 mb-3">
+                <div>{{ current.cloud_cover }} {{ units.cloud_cover }}</div>
+                <small>Cloud Cover</small>
+            </div>
+            <div class="col-6 col-md-4 mb-3">
+                <div>{{ current.pressure_msl }} {{ units.pressure_msl }}</div>
+                <small>Pressure</small>
+            </div>
+            <div class="col-6 col-md-4 mb-3">
+                <div>{{ current.precipitation }} {{ units.precipitation }}</div>
+                <small>Precipitation</small>
+            </div>
+            <div class="col-6 col-md-4 mb-3">
+                <div>{{ current.snowfall }} {{ units.snowfall }}</div>
+                <small>Snowfall</small>
+            </div>
+        </div>
+    </div>
+</div>

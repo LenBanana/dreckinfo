@@ -1,0 +1,58 @@
+<div class="card shadow-lg bg-dark text-light rounded-0 rounded-bottom">
+  <div class="card-body">
+    <div *ngIf="daily && units" class="accordion" id="forecastAccordion">
+      <div class="col-12" *ngFor="let day of daily.time; let i = index">
+        <div class="accordion-item bg-secondary text-light border-0">
+          <h2 class="accordion-header" id="heading{{i}}">
+            <button class="accordion-button collapsed text-light bg-dark row justify-content-start m-0" type="button"
+              data-bs-toggle="collapse" [attr.data-bs-target]="'#collapse'+i" aria-expanded="false"
+              [attr.aria-controls]="'collapse'+i">              
+              <span class="col-11 col-md-4 mt-1" style="margin-right: auto;"><b>{{ day | date: 'EEE, MMM d' }}</b></span>
+              <span class="col-11 col-md-3 mt-1"  style="margin-right: auto;"><app-weather-display [weather_code]="daily.weather_code[i]" [is_day]="1"></app-weather-display> <small class="ps-2">{{weatherToString(daily.weather_code[i])}}</small></span>
+              <div class="d-flex col-11 col-md-3 mt-1 justify-content-between px-4">
+                <span class="pe-4"><i class="fa-solid fa-temperature-low"></i> {{ daily.temperature_2m_min[i] }} {{ units.temperature_2m_min }}</span>
+                <span><i class="fa-solid fa-temperature-high"></i> {{ daily.temperature_2m_max[i] }} {{ units.temperature_2m_max }}</span>
+              </div>
+
+            </button>
+          </h2>
+          <div id="collapse{{i}}" class="accordion-collapse collapse" [attr.aria-labelledby]="'heading' + i"
+            data-bs-parent="#forecastAccordion">
+            <div class="accordion-body p-4 shadow rounded-bottom text-center h-100 border-top">
+              <!-- Precipitation -->
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <i class="fas fa-cloud-rain fa-lg accent-text"></i>
+                <span>{{ daily.precipitation_sum[i] }} {{ units.precipitation_sum }}</span>
+              </div>
+              <!-- Snowfall -->
+              <div class="d-flex justify-content-between align-items-center mb-2" *ngIf="daily.snowfall_sum[i] > 0">
+                <i class="fas fa-snowflake fa-lg accent-text"></i>
+                <span>{{ daily.snowfall_sum[i] }} {{ units.snowfall_sum }}</span>
+              </div>
+              <!-- Wind Speed -->
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <i class="fas fa-wind fa-lg accent-text"></i>
+                <span>{{ daily.wind_speed_10m_max[i] }} {{ units.wind_speed_10m_max }}</span>
+              </div>
+              <!-- Wind Gusts -->
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <i class="fas fa-wind fa-lg accent-text"></i>
+                <span>{{ daily.wind_gusts_10m_max[i] }} {{ units.wind_gusts_10m_max }}</span>
+              </div>
+              <!-- Sunrise -->
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <i class="fas fa-sun fa-lg accent-text"></i>
+                <span>{{ daily.sunrise[i] | date: 'shortTime' }}</span>
+              </div>
+              <!-- Sunset -->
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <i class="fas fa-moon fa-lg accent-text"></i>
+                <span>{{ daily.sunset[i] | date: 'shortTime' }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

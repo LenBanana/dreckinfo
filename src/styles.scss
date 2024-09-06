@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --bg-body: #161620;
+  --bg-primary: #1E1E2F;
+  --bg-secondary: #2E2E3E;
+  --bg-secondary-alt: #3E3E4E;
+  --bg-accent: #3B3B4F;
+
+  --text-primary: #E0E0E0;
+  --text-secondary: #A0A0A0;
+  --text-highlight: #FFFFFF;
+
+  // Accent colors fitting for a dark theme in shades of blue
+  --accent-primary: #484860;
+  --accent-secondary: #5f5f76;
+  --accent-highlight: #8484a9;
+
+  --border-color: #404050;
+  --divider-color: #505060;
+}
+
+
+body {
+  background-color: #161620;
+  color: var(--text-primary);
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}

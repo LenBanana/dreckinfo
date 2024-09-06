@@ -1,0 +1,1 @@
+export var baseUrl = 'https://nodered.dreckbu.de/';

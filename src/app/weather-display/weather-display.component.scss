@@ -1,0 +1,7 @@
+// Overlay image with white filter
+.weather-img {
+    filter: invert(100%);
+    width: 33px;
+    height: 33px;
+    margin-bottom: 5px;
+}

@@ -1,0 +1,42 @@
+/* location-info.component.css */
+
+.card {
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.bg-dark {
+  background-color: var(--bg-secondary) !important;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: var(--text-highlight);
+}
+
+.list-group-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--bg-secondary);
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--divider-color);
+}
+
+.list-group-item i {
+  margin-right: 10px;
+  color: var(--accent-secondary);
+}
+
+.value-bold {
+  font-weight: bold;
+  color: var(--text-highlight);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.value-label {
+  min-width: 50%;
+}

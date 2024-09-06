@@ -1,0 +1,38 @@
+<div class="card shadow-sm bg-dark text-light rounded-0 border-bottom">
+  <div class="card-body">
+    <ul *ngIf="geolocation" class="list-group list-group-flush">
+      <li class="list-group-item bg-dark text-light d-flex justify-content-between">
+        <span class="value-label"><i class="fas fa-wifi"></i> IP Address:</span> 
+        <span class="value-bold">{{ geolocation.ip }}</span>
+      </li>
+      <li class="list-group-item bg-dark text-light d-flex justify-content-between">
+        <span class="value-label"><i class="fas fa-network-wired"></i> ISP:</span> 
+        <span class="value-bold">{{ geolocation.org }} (ASN: {{ geolocation.asn }})</span>
+      </li>
+      <li class="list-group-item bg-dark text-light d-flex justify-content-between">
+        <span class="value-label"><i class="fas fa-city"></i> City:</span> 
+        <span class="value-bold">{{ geolocation.city }}</span>
+      </li>
+      <li class="list-group-item bg-dark text-light d-flex justify-content-between">
+        <span class="value-label"><i class="fas fa-flag"></i> Country:</span> 
+        <span class="value-bold">{{ geolocation.country_name }} ({{ geolocation.country_code }})</span>
+      </li>
+      <li class="list-group-item bg-dark text-light d-flex justify-content-between">
+        <span class="value-label"><i class="fas fa-map-marked-alt"></i> Coordinates:</span> 
+        <span class="value-bold">{{ geolocation.latitude }}, {{ geolocation.longitude }}</span>
+      </li>
+      <li class="list-group-item bg-dark text-light d-flex justify-content-between">
+        <span class="value-label"><i class="fas fa-globe"></i> Timezone:</span> 
+        <span class="value-bold">{{ geolocation.timezone }}</span>
+      </li>
+      <li class="list-group-item bg-dark text-light d-flex justify-content-between">
+        <span class="value-label"><i class="fas fa-map-signs"></i> Region:</span> 
+        <span class="value-bold">{{ geolocation.region }} ({{ geolocation.region_code }})</span>
+      </li>
+      <li class="list-group-item bg-dark text-light d-flex justify-content-between">
+        <span class="value-label"><i class="fas fa-envelope"></i> Postal Code:</span> 
+        <span class="value-bold">{{ geolocation.postal }}</span>
+      </li>
+    </ul>
+  </div>
+</div>

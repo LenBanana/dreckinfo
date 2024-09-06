@@ -1,0 +1,32 @@
+ 
+.bg-dark {
+  background-color: var(--bg-secondary) !important;
+}
+
+.bg-secondary {
+    background-color: var(--bg-secondary-alt) !important;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+h6 {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.accent-text {
+    color: var(--accent-secondary);
+}
+
+// Disable bootstrap button focus outline
+.accordion-button:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.accordion-button::after {
+    margin-left: 0;
+}
